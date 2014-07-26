@@ -1,0 +1,21 @@
+<%= form_for(@trial_model) do |f| %>
+  <% if @trial_model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trial_model.errors.count, "error") %> prohibited this trial_model from being saved:</h2>
+
+      <ul>
+      <% @trial_model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trial_attribute %><br>
+    <%= f.text_field :trial_attribute %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
